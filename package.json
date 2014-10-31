@@ -1,0 +1,28 @@
+{
+  "name": "broccoli-tree-traverser",
+  "version": "0.1.0",
+  "description": "Manages src tree navigation, letting you deal with each file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjhart/broccoli-tree-traverser.git"
+  },
+  "keywords": [
+    "broccoli",
+    "npm",
+    "tree",
+    "traverse"
+  ],
+  "author": "Tim Hart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjhart/broccoli-tree-traverser/issues"
+  },
+  "homepage": "https://github.com/tjhart/broccoli-tree-traverser",
+  "dependencies": {
+    "rsvp": "^3.0.14"
+  }
+}
