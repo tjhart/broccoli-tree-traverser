@@ -11,12 +11,12 @@ var RSVP = require('rsvp'),
  *
  * @param inputTree - input tree or path
  * @param visitor - an object
- * @return {TreeWalker}
+ * @return {TreeTraverser}
  * @constructor
  * @alias module:index
  */
-function TreeWalker(inputTree, visitor) {
-  if (!(this instanceof TreeWalker)) return new TreeWalker(inputTree);
+function TreeTraverser(inputTree, visitor) {
+  if (!(this instanceof TreeTraverser)) return new TreeTraverser(inputTree);
 
   this.inputTree = inputTree;
   this.visitor = visitor;
@@ -30,7 +30,7 @@ function TreeWalker(inputTree, visitor) {
  * @param srcDir {string} the directory to read
  * @return {RSVP.Promise}
  */
-TreeWalker.prototype.readDir = function (srcDir) {
+TreeTraverser.prototype.readDir = function (srcDir) {
   var self = this;
   //make a promise to read the directory.
   return new RSVP.Promise(function (resolve, reject) {
@@ -53,7 +53,7 @@ TreeWalker.prototype.readDir = function (srcDir) {
  * @param files {array} the list of files in the directory
  * @return {RSVP.Promise}
  */
-TreeWalker.prototype.statFiles = function statFiles(parentPath, files) {
+TreeTraverser.prototype.statFiles = function statFiles(parentPath, files) {
   var self = this;
 
   //make a promise to stat all files, which is resolved
@@ -86,15 +86,19 @@ TreeWalker.prototype.statFiles = function statFiles(parentPath, files) {
  * @param readTree
  * @return {RSVP.Promise}
  */
-TreeWalker.prototype.read = function (readTree) {
+TreeTraverser.prototype.read = function (readTree) {
   var self = this;
 
   return readTree(self.inputTree)
     .then(this.readDir.bind(this));
 };
 
+TreeTraverser.prototype.cleanup = function(){
+
+};
+
 /**
  *
- * @type {TreeWalker}
+ * @type {TreeTraverser}
  */
-module.exports = TreeWalker;
+module.exports = TreeTraverser;
