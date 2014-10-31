@@ -90,10 +90,13 @@ TreeTraverser.prototype.read = function (readTree) {
   var self = this;
 
   return readTree(self.inputTree)
-    .then(this.readDir.bind(this));
+    .then(this.readDir.bind(this))
+    .then(function () {
+      return self.inputTree;
+    });
 };
 
-TreeTraverser.prototype.cleanup = function(){
+TreeTraverser.prototype.cleanup = function () {
 
 };
 
