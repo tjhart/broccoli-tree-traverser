@@ -9,7 +9,7 @@ var RSVP = require('rsvp'),
  *
  * `vistor.visit` can return nothing, or a promise if it's behaving asynchronously.
  *
- * @param inputTree - input tree or path
+ * @param inputTree - path - relative path do the source dir
  * @param visitor - an object
  * @return {TreeTraverser}
  * @constructor
