@@ -24,5 +24,8 @@
   "homepage": "https://github.com/tjhart/broccoli-tree-traverser",
   "dependencies": {
     "rsvp": "^3.0.14"
+  },
+  "devDependencies": {
+    "broccoli": "^0.13.2"
   }
 }

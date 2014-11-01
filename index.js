@@ -16,7 +16,7 @@ var RSVP = require('rsvp'),
  * @alias module:index
  */
 function TreeTraverser(inputTree, visitor) {
-  if (!(this instanceof TreeTraverser)) return new TreeTraverser(inputTree);
+  if (!(this instanceof TreeTraverser)) return new TreeTraverser(inputTree, visitor);
 
   this.inputTree = inputTree;
   this.visitor = visitor;
