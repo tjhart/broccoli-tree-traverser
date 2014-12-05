@@ -12,11 +12,12 @@
   },
   "keywords": [
     "broccoli",
+    "helper",
     "npm",
     "tree",
     "traverse"
   ],
-  "author": "Tim Hart",
+  "author": "Tim Hart <tjhart@icloud.com> (http://github.com/tjhart)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tjhart/broccoli-tree-traverser/issues"
