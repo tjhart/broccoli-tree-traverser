@@ -1,9 +1,9 @@
 broccoli-tree-traverser
 ====================
 
-A broccoli plugin helper that manages src tree navigation, letting you deal with each file.
+Manages src tree navigation, letting you deal with each file.
 
-The traverser takes a path, or another tree, and a [Visitor](#visitor).
+The traverser takes a path and a [Visitor](#visitor).
 
 It traverses the input path, calling `visitor#visit` for each file it finds.
 
