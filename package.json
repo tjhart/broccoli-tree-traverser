@@ -1,7 +1,7 @@
 {
   "name": "broccoli-tree-traverser",
   "version": "0.1.0",
-  "description": "Manages src tree navigation, letting you deal with each file",
+  "description": "Manages src tree traversal",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
