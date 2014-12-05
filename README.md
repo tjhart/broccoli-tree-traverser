@@ -49,7 +49,7 @@ function MyPlugin(inputTree){
 }
 
 MyPlugin.prototype.visit = function(path){
-  //do something interesting with the file
+  //do something interesting with the path
 };
 
 MyPlugin.prototype.read = function(readTree){
