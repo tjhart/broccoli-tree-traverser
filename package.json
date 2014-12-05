@@ -1,6 +1,6 @@
 {
   "name": "broccoli-tree-traverser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Manages src tree traversal",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,9 @@
   },
   "keywords": [
     "broccoli",
+    "broccoli-plugin",
     "helper",
+    "broccoli-helper",
     "npm",
     "tree",
     "traverse"
