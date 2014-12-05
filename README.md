@@ -1,7 +1,7 @@
 broccoli-tree-traverser
 ====================
 
-Manages src tree navigation, letting you deal with each file.
+A broccoli plugin helper that manages src tree navigation, letting you deal with each file.
 
 The traverser takes a path, or another tree, and a [Visitor](#visitor).
 
@@ -15,11 +15,47 @@ located somewhere along the input path. It should return a promise if it does an
 ## Future enhancements
 
 ### Traversal
-The traversal algorithm is pretty straightfoward, so it's neither depth first nor breadth first. Nodes
-are visited in the same order they come back from `fs.lstat`. And since it's currently doing everything
-asynchronously, it would be hard to ensure either pattern. I might enhance it with options to
-ensure either algorithm if there is interest.
+The traversal algorithm is an in-order traversal. That is, it traverses files and directories in the order returned by 
+`fs.readdir`. Feel free to submit pull requests with other traversal algorithms.
 
 ### Visit Directories
-The traverser only calls `visit` for plain files. I may enhance it to visit directory paths as well, if there is 
-interest.
+The traverser only calls `visit` for plain files. Feel free to submit pull requests if you want to visit directories.
+
+## Example use
+
+### In a Brocfile:
+```javascript
+//Brocfile.js
+var traverser = require('broccoli-tree-traverser');
+
+var visitor = {
+  visit:function(path){
+    console.log('visiting', path);  
+  }
+};
+
+module.exports = traverser('interesting/path', visitor);
+
+```
+
+### Within another plugin
+```javascript
+//index.js
+var traverser = require('broccoli-tree-traverser');
+
+
+function MyPlugin(inputTree){
+  this.traverser = traverser(inputTree, this);
+}
+
+MyPlugin.prototype.visit = function(path){
+  //do something interesting with the file
+};
+
+MyPlugin.prototype.read = function(readTree){
+  return readTree(this.traverser);
+};
+
+
+module.exports = MyPlugin; 
+```
