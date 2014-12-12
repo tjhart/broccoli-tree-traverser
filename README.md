@@ -1,15 +1,15 @@
 broccoli-tree-traverser
 ====================
 
-Manages src tree navigation, letting you deal with each file.
+A [Broccoli](https://github.com/broccolijs/broccoli) plugin for managing src tree navigation.
 
 The traverser takes a path and a [Visitor](#visitor).
 
-It traverses the input path, calling `visitor#visit` for each file it finds.
+It traverses the input path, calling `Visitor#visit` for each file it finds.
 
-## Visitor <a name="visitor"></a>
+## Visitor <a id="visitor"></a>
 
-A visitor can be any object with a `visit` method. the `visit` method takes a file path (string)
+A visitor is any object with a `visit` method. the `visit` method takes a file path (string)
 located somewhere along the input path. It should return a promise if it does anything asynchronously.
 
 ## Future enhancements
